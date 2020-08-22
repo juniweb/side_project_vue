@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld :msg="title"/>
   </div>
 </template>
 
@@ -12,6 +12,15 @@ export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      title: 'Hello Vue.js App'
+    }
+  },
+  created() {
+    // this.title = 'Hi Vue.js App'
+    this.title = process.env.VUE_APP_TITLE
   }
 }
 </script>
